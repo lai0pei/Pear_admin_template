@@ -1,0 +1,13 @@
+{
+    "name": "BackEnd",
+    "alias": "backend",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BackEnd\\Providers\\BackEndServiceProvider"
+    ],
+    "aliases": {},
+    "files": ["Helpers/utility.php","Helpers/auth.php","Helpers/array.php","Helpers/session.php","Helpers/cache.php"],
+    "requires": []
+}
