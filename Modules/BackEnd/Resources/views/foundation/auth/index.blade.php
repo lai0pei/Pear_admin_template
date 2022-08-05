@@ -72,6 +72,7 @@
         treetable.render({
                 treeColIndex: 1,
                 treeSpid: 0,
+                method : 'post',
                 treeIdName: 'id',
                 treePidName: 'p_id',
                 skin:'line',

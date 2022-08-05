@@ -29,6 +29,7 @@ layui.define(["jquery","layer"], function (exports) {
 		style += '.pear-admin .layui-logo .title{color:' + color + '!important;}';
 		style += '.pear-frame-title .dot,.pear-tab .layui-this .pear-tab-active{background-color: ' + color +'!important;}';
 		style += '.bottom-nav li a:hover{background-color:' + color + '!important;}';
+		style += '.pear-btn-primary {border: 1px solid ' + color + '!important;}';
 		style += '.pear-admin .layui-header .layui-nav .layui-nav-bar{background-color: ' + color + '!important;}'
 		style += '.ball-loader>span,.signal-loader>span {background-color: ' + color + '!important;}';
 		style += '.layui-header .layui-nav-child .layui-this a{background-color:' + color +'!important;color:white!important;}';

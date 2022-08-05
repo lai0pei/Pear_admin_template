@@ -111,6 +111,7 @@
                 cols: cols,
                 skin: 'row',
                 even: true,
+                method : 'post',
                 toolbar: '#group-toolbar',
                 defaultToolbar: [{
                     title: '刷新',

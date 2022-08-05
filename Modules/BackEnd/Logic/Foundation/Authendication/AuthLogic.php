@@ -147,6 +147,7 @@ class AuthLogic extends AbstractLogic
                     $ps[$pk] = $auth_menu[$vp]['sort'];
                     $parent[$pk] = $this->pearMenuDesign($auth_menu[$vp]);
                     if ($categorized_id['child'][$vp] ?? false) {
+                        $child = [];
                         foreach ($categorized_id['child'][$vp] as $ck => $vc) {
                             $cs[$ck] = $auth_menu[$vc]['sort'];
                             $child[] = $this->pearMenuDesign($auth_menu[$vc]);
@@ -214,7 +215,7 @@ class AuthLogic extends AbstractLogic
 
     public function update_status()
     {
-        if ($this->getOne()->is_delete == 0) {
+        if ($this->getOne()->is_disable == 0) {
             throw new AppException('不可禁用');
         }
         $auth = $this->getMany()->toArray();
@@ -228,6 +229,6 @@ class AuthLogic extends AbstractLogic
         });
         $ids = array_column(array_merge([['id' => $id]], $child, $grand_child), 'id');
         session()->forget('pear_menu');
-        return $this->model->where('is_delete', 1)->whereIn('id', $ids)->update(['status' => $this->data['status']]);
+        return $this->model->where('is_disable', 1)->whereIn('id', $ids)->update(['status' => $this->data['status']]);
     }
 }

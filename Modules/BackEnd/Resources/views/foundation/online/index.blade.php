@@ -125,6 +125,7 @@
             url: "{{ $route['list'] }}",
             page: true,
             cols: cols,
+            method : 'post',
             skin: 'row',
             even: true,
             toolbar: '#user-toolbar',

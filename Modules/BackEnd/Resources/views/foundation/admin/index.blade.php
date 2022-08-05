@@ -164,6 +164,7 @@
             elem: '#user-table',
             url: "{{$route['list']}}",
             page: true,
+            method : 'post',
             cols: cols,
             skin: 'row',
             even : true,

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('icon', 100)->comment('菜单图标')->default('');
             $table->string('href', 100)->comment('页面地址')->default('');
             $table->unsignedTinyInteger('is_delete')->comment('0 不可删除, 1 可删除')->default(1);
+            $table->unsignedTinyInteger('is_disable')->comment('0 不可关闭, 1 可关闭')->default(1);
             $table->unsignedTinyInteger('type')->comment('0 目录, 1 菜单')->default(1);
             $table->unsignedTinyInteger('status')->comment('0 关闭, 1 开启')->default(1);
             $table->unsignedMediumInteger('sort')->comment('排序')->default(0);

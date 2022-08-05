@@ -32,7 +32,7 @@ class AuthModel extends AbstractModel
      */
     public function setColumn() : array
     {
-        return ['id', 'p_id', 'title', 'icon', 'href', 'sort', 'type','status','is_delete'];
+        return ['id', 'p_id', 'title', 'icon', 'href', 'sort', 'type', 'status', 'is_delete', 'is_disable'];
     }
 
     /**

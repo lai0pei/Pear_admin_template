@@ -25,14 +25,14 @@ class AuthMenuSeeder extends Seeder
     {
         return  [
             //level 1 node
-            ['id' => 1, 'p_id' => 0, 'title' => "演示", 'icon' => "layui-icon layui-icon-console", 'sort' => 0, 'href' => '', 'type' => 0],
-            ['id' => 2, 'p_id' => 0, 'title' => "演示2", 'icon' => "layui-icon layui-icon-component", 'sort' => 1, 'href' => '','type' => 0],
-            ['id' => 3, 'p_id' => 0, 'title' => "系统管理", 'icon' => "layui-icon layui-icon-set-fill", 'sort' => 2, 'href' => '','type' => 0],
+            ['id' => 1, 'p_id' => 0, 'title' => "演示", 'icon' => "layui-icon layui-icon-console", 'sort' => 0, 'href' => '', 'type' => 0,'is_delete'=>0,'is_disable'=>1],
+            ['id' => 2, 'p_id' => 0, 'title' => "演示2", 'icon' => "layui-icon layui-icon-component", 'sort' => 1, 'href' => '','type' => 0,'is_delete'=>0,'is_disable'=>1],
+            ['id' => 3, 'p_id' => 0, 'title' => "系统管理", 'icon' => "layui-icon layui-icon-set-fill", 'sort' => 2, 'href' => '','type' => 0,'is_delete'=>0,'is_disable'=>0],
             //reserved 50 id
 
             //level 2 node
             ["id" => 50, 'p_id' => 3, "title" => "后台管理员", "icon" => "layui-icon layui-icon-username", 'sort'=>0,"href" => '','type' => 0],
-            ["id" => 51, 'p_id' => 3, "title" => "权限管理", "icon" => "layui-icon layui-icon-template-1", 'sort'=>1,"href" => 'auth_management','type' => 1, 'is_delete'=>0],
+            ["id" => 51, 'p_id' => 3, "title" => "权限管理", "icon" => "layui-icon layui-icon-template-1", 'sort'=>1,"href" => 'auth_management','type' => 1, 'is_delete'=>0,'is_disable'=>0],
             ["id" => 52, 'p_id' => 3, "title" => "日志管理", "icon" => "layui-icon layui-icon-log", 'sort'=>2,"href" => 'log_management','type' => 1],
             //reserved 50 id
 

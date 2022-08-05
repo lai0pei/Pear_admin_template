@@ -72,7 +72,7 @@ final class LoginController extends AbstractController
             $this->validator([
                 'account' => 'required',
                 'password' => 'required',
-                'captcha' => 'required',
+                // 'captcha' => 'required',
             ], '登录失败');
 
             if ($this->logic->Login()) {

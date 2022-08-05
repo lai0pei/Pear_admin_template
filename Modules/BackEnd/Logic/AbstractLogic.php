@@ -2,8 +2,6 @@
 
 namespace Modules\BackEnd\Logic;
 
-use Closure;
-
 abstract class AbstractLogic
 {
 
@@ -11,7 +9,7 @@ abstract class AbstractLogic
 
     protected $data;
 
-    protected $whereBetweenRule = ['start', 'end'];
+    protected $whereBetweenRule = ['start', 'end']; 
 
     public function __construct()
     {
@@ -20,9 +18,7 @@ abstract class AbstractLogic
 
     public function list()
     {
-        $where = $this->whereBuild();
-        $whereBetween = $this->whereBetweenBuild();
-        $result = $this->model->list($where, $whereBetween, $this->customColumn());
+        $result = $this->model->list($this->whereBuild(), $this->whereBetweenBuild(), $this->customColumn());
         return ['data' => $this->toFilter($result['data']), 'count' => $result['count']];
     }
 
@@ -43,10 +39,11 @@ abstract class AbstractLogic
             return $where;
         }
         foreach ($this->data['searchParams'] as $key => $value) {
-            if (!empty($value)) {
+            if (!is_null($value)) {
                 $where[$key] = $value;
             }
         }
+        
         return $where;
     }
 
@@ -57,7 +54,7 @@ abstract class AbstractLogic
             return $where;
         }
         foreach ($this->data['searchParams'] as $key => $value) {
-            if (!empty($value) && in_array($key, $this->whereBetweenRule)) {
+            if (!is_null($value) && in_array($key, $this->whereBetweenRule)) {
                 $where[$key] = $value;
             }
         }

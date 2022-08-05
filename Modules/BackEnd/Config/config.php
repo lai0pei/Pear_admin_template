@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'name' => 'backend',
+    'name' => '后台',
+    'module' => 'backend',
     'title' => env('BACKEND_TITLE',''),
     'db_prefix' => env('DB_PREFIX',''),
     'guard' => 'backend_guard',

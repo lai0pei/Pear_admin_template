@@ -47,7 +47,7 @@ Route::middleware(['backend_csrf','backend_auth', 'backend_auth.session'])->pref
 
     Route::prefix('admin')->group(function () {
         Route::get('/view', [AdminController::class, 'view'])->name('admin_management');
-        Route::get('/list', [AdminController::class, 'list'])->name('admin_list');
+        Route::post('/list', [AdminController::class, 'list'])->name('admin_list');
         Route::get('/addView', [AdminController::class, 'add_view'])->name('admin_addView');
         Route::get('/updateView/{id?}', [AdminController::class, 'update_view'])->name('admin_updateView');
 
@@ -59,7 +59,7 @@ Route::middleware(['backend_csrf','backend_auth', 'backend_auth.session'])->pref
 
     Route::prefix('role')->group(function () {
         Route::get('/view', [RoleController::class, 'view'])->name('role_management');
-        Route::get('/list', [RoleController::class, 'list'])->name('role_list');
+        Route::post('/list', [RoleController::class, 'list'])->name('role_list');
         Route::get('/addView', [RoleController::class, 'add_view'])->name('role_addView');
         Route::get('/updateView/{id?}', [RoleController::class, 'update_view'])->name('role_updateView');
 
@@ -71,7 +71,7 @@ Route::middleware(['backend_csrf','backend_auth', 'backend_auth.session'])->pref
 
     Route::prefix('online')->group(function () {
         Route::get('/view', [OnlineAdminController::class, 'view'])->name('online_admin');
-        Route::get('/list', [OnlineAdminController::class, 'list'])->name('online_list');
+        Route::post('/list', [OnlineAdminController::class, 'list'])->name('online_list');
         Route::get('/updateView/{id?}', [OnlineAdminController::class, 'update_view'])->name('online_updateView');
 
         Route::post('/force_offline', [OnlineAdminController::class, 'forceOffline'])->name('admin_force_offline');
@@ -79,7 +79,7 @@ Route::middleware(['backend_csrf','backend_auth', 'backend_auth.session'])->pref
 
     Route::prefix('auth')->group(function () {
         Route::get('/view', [AuthController::class, 'view'])->name('auth_management');
-        Route::get('/list', [AuthController::class, 'list'])->name('auth_list');
+        Route::post('/list', [AuthController::class, 'list'])->name('auth_list');
         Route::get('/updateView/{id?}', [AuthController::class, 'update_view'])->name('auth_updateView');
 
         Route::post('/update', [AuthController::class, 'update'])->name('auth_update');
@@ -88,7 +88,7 @@ Route::middleware(['backend_csrf','backend_auth', 'backend_auth.session'])->pref
 
     Route::prefix('log')->group(function () {
         Route::get('/view', [LogController::class, 'view'])->name('log_management');
-        Route::get('/list', [LogController::class, 'list'])->name('log_list');
+        Route::post('/list', [LogController::class, 'list'])->name('log_list');
         Route::get('/updateView/{id?}', [LogController::class, 'update_view'])->name('log_updateView');
 
     });

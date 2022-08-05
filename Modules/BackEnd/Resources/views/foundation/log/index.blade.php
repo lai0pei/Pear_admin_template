@@ -97,6 +97,7 @@
             url: "{{$route['list']}}",
             page: true ,
             cols: cols ,
+            method : 'post',
             skin: 'line',
             toolbar: false
         });

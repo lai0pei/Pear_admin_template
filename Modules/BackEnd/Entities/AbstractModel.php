@@ -70,9 +70,10 @@ abstract class AbstractModel extends Model
                 $query = self::select($column);
         }
         try {
+            $count = $query->count($this->primaryKey);
             return [
                 'data' => $query->orderby('id','desc')->simplePaginate($this->data['limit'] ?? 15, "*", 'page', $this->data['page'] ?? 1)->toArray()['data'],
-                'count' => $query->count($this->primaryKey)
+                'count' => $count
             ];
         } catch (\Exception $e) {
             $this->log->errlog('列表错误',$e->getMessage());

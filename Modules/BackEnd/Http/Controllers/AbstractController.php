@@ -40,10 +40,10 @@ abstract class AbstractController extends BaseController
      */
     public function __construct()
     {
-        $this->module = config('backend.name');
+        $this->module = config('backend.module');
         $this->title = config('backend.title');
-        $this->logic = $this->setLogic();
         $this->guard = config('backend.guard');
+        $this->logic = $this->setLogic();
     }
 
 
@@ -88,6 +88,8 @@ abstract class AbstractController extends BaseController
         $data['data'] = $fetch['data'];
         return $this->json($data);
     }
+
+    //1.显示 2.添加 3.更新 4.其他
     /**
      * 渲染函数
      *
@@ -125,6 +127,17 @@ abstract class AbstractController extends BaseController
         }
         return view($this->module . '::' . $this->update_view, [
             'data' => array_merge($this->setUpdateData(),['data'=>$data->toArray()]),
+            'route' => $this->setRoute(),
+            'module' => $this->module,
+            'title' => $this->title,
+            'pear_asset' => self::PEAR_ASSET,
+            'admin_asset' => self::ADMIN_ASSET
+        ]);
+    }
+
+    public function custom_view($view,$data=[]){
+        return view($this->module . '::' . $view, [
+            'data' => $data,
             'route' => $this->setRoute(),
             'module' => $this->module,
             'title' => $this->title,

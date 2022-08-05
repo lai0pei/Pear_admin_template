@@ -40,11 +40,11 @@
                 <input placeholder="密 码 : admin " lay-verify="required|password" lay-reqText="请填写密码" hover
                     class="layui-input" id="password" name="password" />
             </div>
-            <div class="layui-form-item">
+            {{-- <div class="layui-form-item">
                 <input placeholder="验证码 : " hover lay-verify="required|captcha" lay-reqText="请填写验证码"
                     class="code layui-input layui-input-inline" id="captcha" name="captcha" />
                 <img src="{{ $data['images']['captcha'] }}" class="codeImage" alt="" />
-            </div>
+            </div> --}}
             <div class="layui-form-item">
                 <input type="checkbox" name="remember" title="记住密码" lay-skin="primary">
                 <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>记住密码</span><i
