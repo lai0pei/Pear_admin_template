@@ -2,7 +2,7 @@
 
 namespace Modules\BackEnd\Logic\Foundation\Admin;
 
-use Modules\Backend\Entities\Foundation\Admin\AdminModel;
+use Modules\BackEnd\Entities\Foundation\Admin\AdminModel;
 use Modules\BackEnd\Logic\AbstractLogic;
 use Modules\BackEnd\Logic\Foundation\Role\RoleLogic;
 use Illuminate\Support\Facades\Auth;

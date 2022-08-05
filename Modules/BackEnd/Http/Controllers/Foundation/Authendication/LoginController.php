@@ -2,7 +2,7 @@
 
 namespace Modules\BackEnd\Http\Controllers\Foundation\Authendication;
 
-use Modules\Backend\Exceptions\AppException;
+use Modules\BackEnd\Exceptions\AppException;
 use Modules\BackEnd\Logic\Foundation\Admin\AdminLogic;
 use Modules\BackEnd\Http\Controllers\AbstractController;
 use Illuminate\Http\Request;
